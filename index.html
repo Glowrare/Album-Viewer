@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="src/styles/style.css" />
+  <link rel="stylesheet" href="src/styles/z-index.css" />
   <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
   <title>Album viewer</title>
 </head>
@@ -15,8 +16,8 @@
 <body>
   <div class="content">
     <div id="app" class="app">
-      <div class="container">
-        <div class="side-flag mx-auto mb-5 position-relative pt-2">
+      <div class="container position-sticky top-0 zindx-1">
+        <div class="side-flag ms-auto mb-5 position-relative pt-2">
           <span class="iconify position-absolute end-0 me-4 spin-it" data-inline="false" data-icon="gg:live-photo"
             style="color: #ffffff;"></span>
           <h1 class="pry-header text-center mb-0">Album Viewer</h1>
@@ -26,7 +27,7 @@
         </div>
       </div>
       <div class="container">
-        <div class="display-space mx-auto pb-5">
+        <div class="display-space ms-auto pb-5">
           <div class="row gy-4">
             <div class="col">
               <div
