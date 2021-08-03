@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Cute+Font&display=swap");
+/* font-family: 'Black And White Picture', sans-serif; */
+/* font-family: 'Cute Font', cursive; */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cute Font", cursive;
+}
+.content {
+  background-image: url(../img/pexels-tirachard-kumtanom-733853.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+.app {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)),
+    rgba(172, 120, 76, 0.39);
+  min-height: 100vh;
+}
+.side-flag {
+  min-height: 500px;
+  background-color: #39a6a3;
+  border: 10px solid #ffffff;
+  color: #fff;
+}
+.pry-header {
+  font-family: "Black And White Picture", sans-serif;
+  font-size: 72px;
+  font-size: clamp(36px, 4vw + 1rem, 72px);
+  line-height: 1;
+}
+.display-space {
+  max-width: 760px;
+  margin-left: auto;
+}
+.viewer-tile {
+  background: linear-gradient(0deg, #deeeea, #deeeea);
+  border: 1px solid #39a6a3;
+  border-radius: 10px;
+  transform: rotate(-5deg);
+  height: 250px;
+  width: 250px;
+}
