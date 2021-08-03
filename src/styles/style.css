@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Cute+Font&display=swap");
-/* font-family: 'Black And White Picture', sans-serif; */
-/* font-family: 'Cute Font', cursive; */
 
 * {
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -15,6 +16,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 .app {
@@ -23,9 +25,11 @@ body {
   min-height: 100vh;
 }
 .side-flag {
-  min-height: 500px;
+  height: 130px;
+  max-width: 900px;
   background-color: #39a6a3;
-  border: 10px solid #ffffff;
+  border: 7px solid #ffffff;
+  border-top: none;
   color: #fff;
 }
 .pry-header {
@@ -34,15 +38,37 @@ body {
   font-size: clamp(36px, 4vw + 1rem, 72px);
   line-height: 1;
 }
+.spin-it {
+  animation: spinner 10s infinite linear;
+  font-size: 56px;
+  font-size: clamp(24px, 3vw + 1rem, 56px);
+}
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
 .display-space {
-  max-width: 760px;
-  margin-left: auto;
+  max-width: 500px;
 }
 .viewer-tile {
   background: linear-gradient(0deg, #deeeea, #deeeea);
   border: 1px solid #39a6a3;
+  transition: all ease-in-out 0.3s;
   border-radius: 10px;
   transform: rotate(-5deg);
-  height: 250px;
-  width: 250px;
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+}
+.viewer-tile:hover {
+  transform: rotate(-1deg);
+}
+.viewer-tile h2 {
+  line-height: 1;
+  font-size: 36px;
 }
