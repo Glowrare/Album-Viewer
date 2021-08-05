@@ -1,4 +1,4 @@
-import { getRandomItems } from "../randomizer.js";
+import { getRandomItems } from "../randomizer/randomizer.js";
 
 const photosFetcher = async (id) => {
   try {
@@ -16,12 +16,10 @@ const photosFetcher = async (id) => {
 const dispalyRandomRelPhotos = async (selectedId) => {
   const relatedPhotos = await photosFetcher(selectedId);
 
-  const newArray = getRandomItems(relatedPhotos, 6);
+  const randomRelPhotos = getRandomItems(relatedPhotos, 6);
   const viewBoxes = document.querySelectorAll(".viewer-tile");
 
-  console.log(newArray);
-
-  newArray.forEach((item, index) => {
+  randomRelPhotos.forEach((item, index) => {
     const viewBox = viewBoxes[index];
     viewBox.innerHTML = `
     <img src=${item.url} class="album-photo" id=${item.id} title="${item.title}" />
