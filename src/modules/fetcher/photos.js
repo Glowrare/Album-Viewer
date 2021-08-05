@@ -1,23 +1,6 @@
-// import { getRandomItems } from "../randomizer";
+import { getRandomItems } from "../randomizer.js";
 
-let photosArray = [];
-// const photosFetcher = () => {
-//   const url = "https://jsonplaceholder.typicode.com/photos";
-
-//   fetch(url)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       // console.log(data);
-//       photosArray = data.filter((x) => x.albumId === 3);
-//     })
-//     .catch((error) => {
-//       console.log(`error => ${error}`);
-//     });
-
-//   return photosArray;
-// };
-
-async function photosFetcher(id) {
+const photosFetcher = async (id) => {
   try {
     const url = "https://jsonplaceholder.typicode.com/photos";
     const res = await fetch(url);
@@ -28,6 +11,24 @@ async function photosFetcher(id) {
     console.log(error);
     return null;
   }
-}
+};
 
-export { photosArray, photosFetcher };
+const dispalyRandomRelPhotos = async (selectedId) => {
+  const relatedPhotos = await photosFetcher(selectedId);
+
+  const newArray = getRandomItems(relatedPhotos, 6);
+  const viewBoxes = document.querySelectorAll(".viewer-tile");
+
+  console.log(newArray);
+
+  newArray.forEach((item, index) => {
+    const viewBox = viewBoxes[index];
+    viewBox.innerHTML = `
+    <img src=${item.url} class="album-photo" id=${item.id} title="${item.title}" />
+    `;
+    viewBox.setAttribute("id", item.id);
+    viewBox.classList.remove("album-wrapper");
+  });
+};
+
+export { dispalyRandomRelPhotos };

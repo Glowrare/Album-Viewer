@@ -42,10 +42,22 @@ body {
   font-size: clamp(36px, 4vw + 1rem, 72px);
   line-height: 1;
 }
+.icon-ftsz {
+  font-size: clamp(24px, 3vw + 1rem, 56px);
+}
+.back-home:hover {
+  color: #bf1363 !important;
+}
 .spin-it {
   animation: spinner 10s infinite linear;
   font-size: 56px;
   font-size: clamp(24px, 3vw + 1rem, 56px);
+}
+.refresh-display {
+  cursor: pointer;
+}
+.refresh-display:hover {
+  animation: rocker 2s linear infinite alternate;
 }
 @keyframes spinner {
   from {
@@ -53,6 +65,14 @@ body {
   }
   to {
     transform: rotate(359deg);
+  }
+}
+@keyframes rocker {
+  from {
+    transform: rotate(-15deg);
+  }
+  to {
+    transform: rotate(30deg);
   }
 }
 .display-space {
@@ -80,9 +100,5 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: none;
   transition: all 0.3s ease-in-out;
 }
-/* .viewer-tile .album-photo:hover {
-  transform: scale(2);
-} */
