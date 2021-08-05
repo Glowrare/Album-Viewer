@@ -8,7 +8,7 @@ const albumFetcher = () => {
       // console.log(data)
 
       const newArray = getRandomItems(data, 6);
-      console.log(newArray);
+      // console.log(newArray);
 
       const albumCards = document.querySelectorAll(".album-title");
 

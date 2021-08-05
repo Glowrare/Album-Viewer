@@ -1,5 +1,5 @@
 function getRandomItems(initArray, n) {
-  const result = new Array(n),
+  let result = new Array(n),
     len = initArray.length,
     taken = new Array(len);
   if (n > len)
